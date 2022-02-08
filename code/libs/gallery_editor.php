@@ -3,7 +3,7 @@
 # Взятие случайной фотографии из случайной папки с альбомами из БД
 function get_random_photo(){
     $path = ROOT."/assets/images/photos/";
-    $db_album = db_read_data("SELECT * FROM albums WHERE show_album LIKE 1 ORDER BY id DESC");
+    $db_album = db_read_data("SELECT * FROM albums WHERE show_album LIKE 1 ORDER BY id DESC LIMIT 3");
     $rand = random_int(0,count($db_album)-1);
 
     $gdir = $path.$db_album[$rand]['folder'];
