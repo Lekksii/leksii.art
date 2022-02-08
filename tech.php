@@ -13,12 +13,9 @@
   <title>Технічні роботи</title>
     <!-- Шапка индексной страницы сайта -->
   <?php require_once('templates/meta-head.php'); ?>
+  <script src="code/vue.min.js"></script>
 </head>
 <body>
-<div class="container">
-<!-- Analytics -->
-<?php require_once('templates/google_anal.php'); ?>
-
 <!--Аякс отправка post запроса при загрузке страницы-->
 <script type="text/javascript">
     // Check if the page has loaded completely                                         
@@ -30,15 +27,29 @@
             }); 
     }); 
 </script> 
-  
-<?php require_once('templates/error/navbar-error.php'); ?>
+<?php require_once('templates/google_anal.php'); ?>
 
-<?php require_once('templates/error/tech.php'); ?>
-  
-<?php #require_once('templates/scroll_top.php'); ?>
+<div id="app">
+  <div class="container">
 
+    <?php require_once('templates/error/navbar-error.php'); ?>
+
+    <?php require_once('templates/error/tech.php'); ?>
+      
+    <?php require_once('templates/footer.php'); ?>
+  </div>
+
+  <div v-show="langSpinner" class="spinner-container" style="transition: 0.3s ease; display: none;">
+  <div class="spinner">
+    <div class="spinner-border txt-col-white" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
 </div>
-<?php require_once('templates/footer.php'); ?>
+</div>
+
+<script src="code/multilang.js"></script>
+
  <!-- Bootstrap -->
  <?php require_once('code/bootstrap-connect.php'); ?>
 </body>

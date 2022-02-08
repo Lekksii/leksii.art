@@ -1,6 +1,6 @@
 <section class="block-pos-center technical-issues">
 
-    <script>
+    <script type="application/javascript">
         function modal(){
             $("#what").modal("show");
         }
@@ -8,10 +8,10 @@
 
     <div class="container-tech">
     <div class="alert-window-tech">
-        <h3 class="border-b-nopadding p-bt-half minline-minus">Йой, шось сталось...</h3>
+        <h3 class="border-b-nopadding p-bt-half minline-minus">{{langKey('error_title')}}</h3>
         <h1 class="pb-1" style="font-size: 36px;">⛔️</h1>
-        <p class="f-ua fs15">Якась помилка, вже шось наклацали. 😒<br></p>
-        <a class="f-ua fs12 mt-1" href="#" onclick="modal()">Що робити?</a>  
+        <p v-html="langKey('error_description')" class="f-ua fs15">error.description<br></p>
+        <a class="f-ua fs12 mt-1" href="#" onclick="modal()">{{langKey('tech_error_button_info')}}</a>  
     </div>
     </div>
 
@@ -20,17 +20,19 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title fw700 fs14 f-ua" id="myModalLabel">Що робити?</h5>
+        <h5 class="modal-title fw700 fs14 f-ua" id="myModalLabel">{{langKey('tech_error_button_info')}}</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body f-ua fs12">
-        Ну тут схоже, що Ви ввели невірну адресу, або зайшли на сторінку, якої вже не існує. Бажано перейти на головну сторінку сайту.
+      {{langKey('error_info_description')}}
       </div>
       <div class="modal-footer">
-            <a class="f-ua fs12 alert-btn" href="/">На головну</a>  
-            <a class="f-ua fs12 alert-btn" onclick="$('#what').modal('hide');">Добре</a>  
+            <a class="f-ua fs12 alert-btn" href="/">{{langKey('back')}}</a>  
+            <a class="f-ua fs12 alert-btn" onclick="$('#what').modal('hide');">{{langKey('okay')}}</a>  
       </div>
     </div>
   </div>
 </div>
+
+
 </section>
