@@ -6,7 +6,7 @@
         <div class="caption-container">
             <div class="about-text-container f-ua">
                 <h2 class="fw400">{{langKey('about_name')}}</h2>
-                <h4>{{langKey('about_caption')}}</h4>
+                <h4 style="color: rgb(199 41 41);">{{langKey('about_caption')}}</h4>
                 <p v-html="langKey('about_description')" class="border-b f-ua fs10">about.description</p>
             </div>
             <div class="about-social">
