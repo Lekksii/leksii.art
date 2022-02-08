@@ -73,6 +73,17 @@ html{
     font-weight: 400;
 }
 
+img{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    user-drag: none;
+    -webkit-touch-callout: none;
+    pointer-events: none;
+}
+
 a{
     color:inherit;
 }
@@ -619,6 +630,8 @@ header{
 
 }
 
+
+
 .dropdown{
     display: none;
 }
@@ -680,6 +693,17 @@ iframe{
     transition: 0.3s ease;
     cursor: pointer;
   }
+
+  .col-album-big{
+    width: 1000px;
+    position: relative;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+
+  .col-album-big:hover{
+    transform: scale(1.01);
+}
 
   .col-album:hover{
       transform: scale(1.1);
