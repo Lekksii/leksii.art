@@ -22,11 +22,12 @@
 
     <!-- Аналитика от гугла -->
   <?php include_once('templates/google_anal.php'); ?>
+  <script src="code/vue.min.js"></script>
 </head>
 <body>
   <!--Аякс отправка post запроса при загрузке страницы-->
-<script type="text/javascript">
-    // Check if the page has loaded completely                                         
+<script type="application/javascript">
+    // Проверка, загружена ли страница                                      
     $(document).ready( function() { 
         $.ajax({
                 type: "POST",
@@ -35,6 +36,7 @@
             }); 
     }); 
 </script> 
+<div id="app">
 <div class="container">
 <!-- Антикопирка -->
 <?php #require_once('templates/anticopy.php'); ?>
@@ -56,15 +58,27 @@
 
 <!-- Видео-галерея -->
 <?php include_once('templates/index/video-portfolio.php'); ?>
+
+<div v-show="langSpinner" class="spinner-container" style="transition: 0.3s ease; display: none;">
+  <div class="spinner">
+    <div class="spinner-border txt-col-white" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Футер -->
+<?php include_once('templates/footer.php'); ?>
 </div>
 
 <!-- Кнопка быстрого скролла вверх -->
 <?php include_once('templates/scroll_top.php'); ?>
-<!-- Футер -->
-<?php include_once('templates/footer.php'); ?>
 <!-- Bootstrap -->
 <?php include_once('code/bootstrap-connect.php'); ?>
-<script>
+<script src="code/multilang.js"></script>
+<script type="application/javascript">
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)

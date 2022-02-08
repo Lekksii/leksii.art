@@ -1,0 +1,77 @@
+# DISABLE CACHING от Igor'a
+<IfModule mod_headers.c>
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires 0
+</IfModule>
+
+<FilesMatch "\.(css|flv|gif|htm|html|ico|jpe|jpeg|jpg|js|mp3|mp4|png|pdf|swf|txt)$">
+    <IfModule mod_expires.c>
+        ExpiresActive Off
+    </IfModule>
+    <IfModule mod_headers.c>
+        FileETag None
+        Header unset ETag
+        Header unset Pragma
+        Header unset Cache-Control
+        Header unset Last-Modified
+        Header set Pragma "no-cache"
+        Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+        Header set Expires "jue, 1 Jan 1970 00:00:00 GMT"
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    RewriteRule ^static/(js|css)/([a-z]+)-([0-9]+)\.(js|css)$ /site/$1/$2.$4 [R=302,NC,L]
+    
+    ##Человеку Понятные Урлы by Igor & Leksii
+    
+    RewriteRule ^photostudio/$ photostudio.php [L,QSA]
+    RewriteRule ^photostudio$ photostudio.php [L,QSA]
+    
+    RewriteRule ^404/$ error.php [L,QSA]
+    RewriteRule ^404$ error.php [L,QSA]
+
+    RewriteRule ^tech/$ tech.php [L,QSA]
+    RewriteRule ^tech$ tech.php [L,QSA]
+
+    RewriteRule ^web-portfolio/$ w_portfolio.php [L,QSA]
+    RewriteRule ^web-portfolio$ w_portfolio.php [L,QSA]
+
+    RewriteRule ^vue/$ study/vue/vue.php [L,QSA]
+    RewriteRule ^vue$ study/vue/vue.php [L,QSA]
+    
+    RewriteRule ^development/$ tech.php [L,QSA]
+    RewriteRule ^development$ tech.php [L,QSA]
+    
+    RewriteRule ^studio/$ studio.php [L,QSA]
+    RewriteRule ^studio$ studio.php [L,QSA]
+    
+    RewriteRule ^studio-reg/$ studio_reg.php [L,QSA]
+    RewriteRule ^studio-reg$ studio_reg.php [L,QSA]
+
+    RewriteRule ^gallery/$ gallery.php [L,QSA]
+    RewriteRule ^gallery$ gallery.php [L,QSA]
+
+    RewriteRule ^dev/$ index_edited.php [L,QSA]
+    RewriteRule ^dev$ index_edited.php [L,QSA]
+</IfModule>
+
+
+
+
+
+DirectoryIndex index.php index.html tech.php
+
+ErrorDocument 403 https://leksii.art/404/
+ErrorDocument 404 https://leksii.art/404/
+ErrorDocument 500 https://leksii.art/404/
+
+## вывод ошибок php
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_value docref_root 1
+php_value docref_ext 1
+

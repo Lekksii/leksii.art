@@ -12,6 +12,7 @@
   <title>Фотоколекція</title>
     <!-- Шапка индексной страницы сайта -->
     <?php require_once('templates/meta-head.php'); ?>
+    <script src="code/vue.min.js"></script>
 </head>
 <body>
 
@@ -19,6 +20,7 @@
 <!-- Analytics -->
 <?php require_once('templates/google_anal.php'); ?>
 
+<div id="app">
 <?php require_once('templates/error/navbar-error.php'); ?>
   
 <?php 
@@ -41,7 +43,7 @@ if (isset($_GET['album'])){
             <div class="vid-title-block f-ua">
                 <h4 class="fw700 fs20 txt-col-white mb-1"></h4>
             </div>
-            <h4 class="fw700 fs16 txt-col-white mb-2"><strong>КОЛЕКЦІЯ "'.$db_album[$album_id]['title'].'"</strong></h4>';
+            <h4 class="fw700 fs16 txt-col-white mb-2"><strong>{{langKey("gallery_title")}} "'.$db_album[$album_id]['title'].'"</strong></h4>';
     for ($i=0;$i<$album_count;$i++){
         if($tmp == 0){
             echo '<div class="row row-album">';
@@ -71,13 +73,14 @@ if (isset($_GET['album'])){
 ?>
 
 <div class="btns-container mb-1">
-    <a class="f-ua fs12 style-white-btn txt-col-black" style="color: #000;" href="/#photos">Повернутись назад</a> 
-</div>
-
-<?php #include('templates/scroll_top.php'); ?>
+    <a class="f-ua fs12 style-white-btn txt-col-black" style="color: #000;" href="/#photos">{{langKey('gallery_back')}}</a> 
 </div>
 
 <?php require_once('templates/footer.php'); ?>
+</div>
+<script src="code/multilang.js"></script>
+<?php #include('templates/scroll_top.php'); ?>
+</div>
 <!-- Bootstrap -->
 <?php require_once('code/bootstrap-connect.php'); ?>
 </body>

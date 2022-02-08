@@ -2,8 +2,8 @@
 <div class="container">
 <div class="vid-title-block f-ua">
             <h4 class="fw700 fs20 txt-col-white">
-                <strong>Відео портфоліо</strong></h4>
-            <h5 class="fw400 fs10 txt-col-white" style="opacity: 0.5;">Музичні кліпи, mood відео, проекти які я знімав і монтував</h5>
+                <strong>{{langKey('videos_title')}}</strong></h4>
+            <h5 class="fw400 fs10 txt-col-white" style="opacity: 0.5;">{{langKey('videos_caption')}}</h5>
 </div>
   <div class="row row-mobile">
         <div class="col col-sm-6 col-mb vid-pop">
