@@ -26,7 +26,7 @@
 <?php 
 
 if (isset($_GET['album'])){
-    $db_album = db_read_data("SELECT * FROM albums WHERE show_album LIKE 1 ORDER BY id ASC");
+    $db_album = db_read_data("SELECT * FROM albums ORDER BY id ASC");
     $album_id = $_GET['album']-1;
     $path = "assets/images/photos/".$db_album[$album_id]['folder'];
     $files = [];
@@ -46,12 +46,12 @@ if (isset($_GET['album'])){
             <h4 class="fw700 fs16 txt-col-white mb-2"><strong>{{langKey("gallery_title")}} "'.$db_album[$album_id]['title'].'"</strong></h4>';
     for ($i=0;$i<$album_count;$i++){
         if($tmp == 0){
-            echo '<div class="row row-album">';
+            echo '<div class="row">';
         }
         
         if ($tmp < 4){
             echo '
-            <div class="col-4 col-album col-mb">
+            <div class="col-4 col-album-big col-mb">
                 <img class = "album" src="'.$files[$i].'" alt="'.$db_album[$album_id]['title'].'">
             </div>';
             $tmp += 1;
