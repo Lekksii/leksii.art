@@ -26,32 +26,73 @@ function generate_albums(){
     for ($i=0;$i<$album_count;$i++){
         if ($db_album[$i]['show_album'] == 1)
         {
-        if($tmp == 0){
+        if($tmp === 0){
             echo '<div class="row row-album">';
         }
         
         if ($tmp < 4){
             echo '
-            <div class="col-4 col-album col-mb">
-                <a href="/gallery?album='.$db_album[$i]['id'].'"><img class = "album" src="/assets/images/photos/'.$db_album[$i]['folder'].'/'.$db_album[$i]['preview_photo'].'" alt="'.$db_album[$i]['title'].'"></a>
-                <i class="fas fa-images album-icon"></i>
-                <div class="album-title" id="album-title">
-                <p>'.$db_album[$i]['title'].'</p>
+            <div class="col-4 col-album col-mb" onclick="location.href=\''.'/gallery?album='.$db_album[$i]['id'].'\'">
+                <img class = "album" loading="lazy" data-src="/assets/images/photos/'.$db_album[$i]['folder'].'/'.$db_album[$i]['preview_photo'].'.webp" alt="'.$db_album[$i]['title'].'">
+                <i class="bi bi-images album-icon"></i>
+                <div class="album-title">
+                    <p>'.$db_album[$i]['title'].'</p>
                 </div>
             </div>
             ';
             $tmp += 1;
         }
         
-        if($tmp == 4 and $i != $album_count-1){
-            echo '</div>';
+        if($tmp === 4 and $i != $album_count-1){
+            echo '</div>
+            ';
             $tmp = 0;
         }
         
-        if($i == $album_count-1){
-            echo '</div>';
+        if($i === $album_count-1){
+            echo '</div>
+            ';
         }
         }
     }
 
 }
+
+function video_portfolio(){
+    $json = file_get_contents(ROOT.'/json/data.json');
+    $json_data = json_decode($json, true);
+    $tmp = 0;
+    $vids = $json_data["video_section"];
+    $vid_count = count($vids);
+
+    for($i=0;$i<$vid_count;$i++){
+        if($tmp === 0){
+            echo '<div class="row row-mobile">';
+        }
+
+        if ($tmp < 2){
+            echo '
+            <div class="col col-sm-6 col-mb vid-pop col-mb-vid" onclick="location.href=https://youtube.com/embed/'.$vids[$i]['url'].'?rel=0">
+                <div class="title-vid">
+                    <p class="f-ua fw700">'.$vids[$i]['title'].'</p>
+                </div>
+                <img class="youtube-preview" height="250" data-src="https://img.youtube.com/vi/'.$vids[$i]['url'].'/0.jpg" loading="lazy" alt="'.$vids[$i]['title'].'">
+            </div>
+            ';
+            $tmp += 1;
+        }
+
+        if($tmp === 2 and $i != $vid_count-1){
+            echo '</div>
+            ';
+            $tmp = 0;
+        }
+        
+        if($i === $vid_count-1){
+            echo '</div>
+            ';
+        }
+    }
+}
+
+?>
