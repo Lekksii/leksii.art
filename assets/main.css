@@ -1,6 +1,4 @@
-/* font-family: 'Overpass', sans-serif; */
-/* font-family: 'Cuprum', sans-serif; */
-/* font-family: 'Oswald', sans-serif; */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 
 @font-face {
     font-family: 'eUkraine';
@@ -71,6 +69,12 @@ html{
     box-sizing: border-box;
     font-family: 'eUkraine';
     font-weight: 400;
+    font-display: fallback;
+    
+}
+
+img[data-src]{
+opacity: 0;
 }
 
 img{
@@ -82,6 +86,8 @@ img{
     user-drag: none;
     -webkit-touch-callout: none;
     pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s;
 }
 
 a{
@@ -190,8 +196,12 @@ b{
     transition: 0.3s ease;
 }
 .inst:hover{
-    transform: translateX(-12px);
+    transform: translateX(-5px);
     color: rgb(190, 190, 190);
+}
+
+.mob-menu-list{
+    font-size: 38px;
 }
 
 .logo{
@@ -267,10 +277,25 @@ header{
 .low-links{
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
 }
 
 .base .big-title h1{
-    text-align: center; font-size: 11vw; color: #00000021;
+    text-align: center; 
+    font-size: 11vw; 
+    color: #00000021;
+    animation: 0.4s ease-out 0s 1 showBigTitle;
+}
+
+@keyframes showBigTitle {
+    0% {
+      transform: translateY(-5rem);
+      opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .base{
@@ -370,13 +395,19 @@ header{
 }
 
 .fas{
-    font-size: 24px;
+    font-size: 32px;
+}
+
+.youtube-preview{
+    width: 100%;
+    object-fit: none;
+    border-radius: 0 0 9px 9px;
 }
 
 .big-image{
     position: relative;
     border-radius: 0px 0px 19px 19px;
-    width: -webkit-fill-available;
+    max-width: 100%;
     height: 385px;
     object-fit: cover;
 }
@@ -392,8 +423,7 @@ header{
 }
 
 .avatar{
-    height: 300px;
-    width: 300px;
+    width: 100%;
     object-fit: cover;
     border-radius: 19px 0px 0px 19px;
 }
@@ -402,8 +432,17 @@ header{
     text-align: center;
 }
 
+.play_icon{
+    background-color: #161616;
+}
+
+.bi-play-btn-fill{
+    color: #fff;
+}
+
 .vid-pop{
     transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .vid-pop:hover{
@@ -660,14 +699,87 @@ header{
 .container-tech{
     animation: 0.5s ease-out 0s 1 ScaleOut;
 }
-
 .row-mobile{
     display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.col-mb-vid{
+    margin: 0 1rem;
+}
+
+.base .column-r{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.base .column-c{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.base .column-l{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 
 iframe{
     border-radius: 0px 0px 8px 8px;
+  }
+
+  .mobile__navmenu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    background-color: #050505;
+    padding-bottom: 45%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    font-size: 34px;
+    z-index: 999;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile_menu_close{
+    position: fixed;
+    bottom: 20%;
+    font-weight: 700;
+    font-size: 48px;
+    color: #ff4242 !important;
+  }
+
+  .mobile_menu_title{
+    position: fixed;
+    top: 5%;
+    color: #fff;
+    border-bottom: 2px solid #fff3;
+    padding-bottom: 1rem;
+    font-weight: 700;
+    width: 75%;
+  }
+
+  .language_mobile_menu{
+    border-top: 2px solid #ffffff54;
+    padding-top: 1rem;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    margin-top: -1.3rem;
+    bottom: 5%;
+  }
+
+  .mobile__navmenu a{
+      color: #fff;
   }
 
   .title-vid p{
@@ -676,15 +788,10 @@ iframe{
 
   .album{
     object-fit: cover;
-    width: -webkit-fill-available;
+    width: 100%;
     border-radius: 8px;
+    cursor: pointer;
     }
-
-  .film-frame{
-    z-index: 1;
-    position: absolute;
-    width: -webkit-fill-available;
-  }
 
   .col-album{
     height: 125px;
@@ -765,6 +872,24 @@ iframe{
     .album-icon{
         font-size: 26px;
         bottom: 11px;
+    }
+
+    .row-mobile{
+        display: flex;
+    }
+
+    .base .big-title h1{
+        text-align: center; 
+        font-size: 22vw; 
+        color: #00000021;
+    }
+
+    .low-links-col{
+        margin-top: 1rem;
+    }
+
+    .low-links-size{
+        font-size: 3vw;
     }
 
     .language{
@@ -891,7 +1016,6 @@ iframe{
     }
 
     #btn-back-to-top {
-        transform: scale(1.4) !important;
         bottom: 50px !important;
         right: 40px !important;
     }
@@ -903,6 +1027,14 @@ iframe{
     .col-album{
         height: auto !important;
         width: 100%;
+    }
+
+    .col-mb-vid{
+        margin: 0 0;
+    }
+
+    .big_image{
+        display: none;
     }
 
 }
@@ -927,12 +1059,20 @@ iframe{
     font-family: 'eUkraine' !important;
 }
 
+.bi-arrow-up-short{
+    font-size: 32px;
+}
+
+.bi-instagram{
+    font-size: 24px;;
+}
+
 #btn-back-to-top {
     box-shadow: 0px 0px 6px #00000046;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 11.5px 15px;
+    padding: 4px 13px;
     border-radius: 40px;
     color: #000;
     background-color: #fff;
@@ -968,7 +1108,11 @@ iframe{
     margin-bottom: 1.6rem;
   }
 
+
+
   .spinner-container{
+    transition: 0.3s ease;
+    z-index: 999999;
     position: fixed;
     width: 100%;
     height: 100%;
