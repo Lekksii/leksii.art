@@ -1,0 +1,80 @@
+{
+    "about_section":{
+        "avatar": "/assets/images/about-img.webp",
+        "name": "about_name",
+        "subname": "about_caption",
+        "caption": "about_description"
+    },
+    "price_section":[
+        {
+            "title": "price_photo_title",
+            "price": 40,
+            "currency": "$",
+            "per_hour": true,
+            "caption": "price_photo_description",
+            "warning": "price_photo_warning"
+        },
+        {
+            "title": "price_video_title",
+            "price": 200,
+            "currency": "$",
+            "per_hour": false,
+            "caption": "price_video_description",
+            "warning": ""
+        }
+    ],
+    "albums_section":[
+        {
+            "title": "",
+            "folder": "",
+            "preview": "",
+            "show_album": true
+        }
+    ],
+    "video_section":[
+        {
+            "title": "СХОЖА & МАРНИЙ - Сон",
+            "url": "-Lt3ef7bQX4"
+        },
+        {
+            "title": "СХОЖА - Скульптура",
+            "url": "WnQ_1nl_2aM"
+        },
+        {
+            "title": "СХОЖА - Реклама серця",
+            "url": "JKYF-XoALG4"
+        },
+        {
+            "title": "ФІОЛЕТ - Саме собою",
+            "url": "mab9O1LNZIM"
+        },
+        {
+            "title": "Marbi – Маленький остров",
+            "url": "IGla8bAHoi0"
+        },
+        {
+            "title": "СХОЖА – Очерет",
+            "url": "QwdvtPIbKVA"
+        },
+        {
+            "title": "СХОЖА & МАРНИЙ – Випий зі мною",
+            "url": "lVcA-QDcob0"
+        },
+        {
+            "title": "СХОЖА – Щедрівочка",
+            "url": "Tk8G1Hs6TSg"
+        },
+        {
+            "title": "СХОЖА – Вогонь",
+            "url": "why79Rm_hYA"
+        },
+        {
+            "title": "LEKSII – 2022",
+            "url": "VYulStvGGkM"
+        },
+        {
+            "title": "LEKSII – 2021",
+            "url": "U3Cydm4Had8"
+        }
+    ]
+}
