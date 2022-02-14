@@ -15,7 +15,12 @@
     <script src="code/vue.min.js"></script>
 </head>
 <body>
-
+<script>
+    // Проверка, загружена ли страница                                      
+    $(document).ready( function() { 
+            [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) { img.setAttribute('src', img.getAttribute('data-src')); img.onload = function() { img.removeAttribute('data-src'); }; });
+    }); 
+</script> 
 <div class="container">
 <!-- Analytics -->
 <?php require_once('templates/google_anal.php'); ?>
@@ -33,7 +38,7 @@ if (isset($_GET['album'])){
     $album_count = 0;
     $tmp = 0;
 
-    foreach (glob($path.'/*.jpg') as $file) {
+    foreach (glob($path.'/*.webp') as $file) {
         $files[] = $file;
     }
 
@@ -52,7 +57,7 @@ if (isset($_GET['album'])){
         if ($tmp < 4){
             echo '
             <div class="col-4 col-album-big col-mb">
-                <img class = "album" src="'.$files[$i].'" alt="'.$db_album[$album_id]['title'].'">
+                <img class = "album" loading="lazy" data-src="'.$files[$i].'" alt="'.$db_album[$album_id]['title'].'">
             </div>';
             $tmp += 1;
         }

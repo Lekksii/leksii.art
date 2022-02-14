@@ -1,6 +1,6 @@
-<section class="block-pos-center technical-issues">
+<div class="block-pos-center technical-issues">
 
-    <script type="application/javascript">
+    <script>
         function modal(){
             $("#what").modal("show");
         }
@@ -17,20 +17,20 @@
 
     <!-- Modal -->
     <div class="modal fade what" id="what" tabindex="-1" aria-labelledby="what" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title f-ua fw700" id="myModalLabel">{{langKey('tech_error_button_info')}}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title f-ua fw700" id="myModalLabel">{{langKey('tech_error_button_info')}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body f-ua fs12">
+        {{langKey('tech_info_description')}}
+        </div>
+        <div class="modal-footer">
+              <a class="f-ua fs13 alert-btn" onclick="$('#what').modal('hide');">{{langKey('okay')}}</a>  
+        </div>
       </div>
-      <div class="modal-body f-ua fs12">
-      {{langKey('tech_info_description')}}
-      </div>
-      <div class="modal-footer">
-            <a class="f-ua fs13 alert-btn" onclick="$('#what').modal('hide');">{{langKey('okay')}}</a>  
       </div>
     </div>
-  </div>
-</div>
 
-</section>
+      </div>

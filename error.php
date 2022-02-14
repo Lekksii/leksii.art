@@ -12,11 +12,11 @@
   <title>Error</title>
     <!-- Шапка индексной страницы сайта -->
     <?php require_once('templates/meta-head.php'); ?>
-    <script src="code/vue.min.js"></script>
 </head>
 <body>
+<script src="code/vue.min.js"></script>
 <!--Аякс отправка post запроса при загрузке страницы-->
-<script type="application/javascript">
+<script>
     // Check if the page has loaded completely                                         
     $(document).ready( function() { 
         $.ajax({

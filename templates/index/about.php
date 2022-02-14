@@ -1,7 +1,7 @@
 <section class="block-pos-center info-bg mt-2 mb-1 border-b" id="about">
     <div class="about">
         <div class="avatar-img">
-            <img class="avatar" src="/assets/images/about-img.jpg" alt="Photographer">
+            <img class="avatar" loading="lazy" src="/assets/images/placeholder.webp" data-src="/assets/images/about-img.webp" width="300" height="300" alt="Photographer">
         </div>
         <div class="caption-container">
             <div class="about-text-container f-ua">

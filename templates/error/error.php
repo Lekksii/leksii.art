@@ -1,6 +1,6 @@
-<section class="block-pos-center technical-issues">
+<div class="block-pos-center technical-issues">
 
-    <script type="application/javascript">
+    <script>
         function modal(){
             $("#what").modal("show");
         }
@@ -35,4 +35,4 @@
 </div>
 
 
-</section>
+      </div>
