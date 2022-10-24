@@ -42,7 +42,7 @@
     <div v-show="langSpinner" class="spinner-container" style="transition: 0.3s ease; display: none;">
   <div class="spinner">
     <div class="spinner-border txt-col-white" role="status">
-      <span class="sr-only">Loading...</span>
+      <span class="sr-only transparent">Loading...</span>
     </div>
   </div>
 </div>

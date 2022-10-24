@@ -1,11 +1,11 @@
 <?php
 include('telegram.php');
-
+/*
 ## дефол pdi conenct
-$servername = "host";
-$database = "database";
-$username = "username";
-$password = "pass";
+$servername = "localhost";
+$database = "leksii-art-bd";
+$username = "alexku01";
+$password = "stalker12";
  $charsetSQL = 'utf8';
 
  $dsn = "mysql:host=$servername;dbname=$database;charset=$charsetSQL";
@@ -29,9 +29,10 @@ $password = "pass";
  $languageDB = $dbh -> query ("SET character_set_client = utf8");
  $languageDB = $dbh -> query ("SET NAMES 'utf8'");
  
-
+*/
 
 # Получение данных из таблицы
+/*
 function db_read_data($queryCommand){
     # Пытаемся соединиться с бд
     $servername = "localhost";
@@ -84,4 +85,5 @@ function db_update_data($update){
 }
 $conn_upd = null;
 }
+*/
 ?>

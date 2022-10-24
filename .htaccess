@@ -36,6 +36,8 @@
     RewriteRule ^tech/$ tech.php [L,QSA]
     RewriteRule ^tech$ tech.php [L,QSA]
 
+    RewriteRule ^admin$ templates/admin/admin.php [L,QSA]
+
     RewriteRule ^web-portfolio/$ w_portfolio.php [L,QSA]
     RewriteRule ^web-portfolio$ w_portfolio.php [L,QSA]
 
@@ -56,17 +58,20 @@
 
     RewriteRule ^dev/$ index_edited.php [L,QSA]
     RewriteRule ^dev$ index_edited.php [L,QSA]
+	
+	RewriteRule ^bb/$ browser.php [L,QSA]
+    RewriteRule ^bb$ browser.php [L,QSA]
 </IfModule>
 
 
 
 
 
-DirectoryIndex index.php index.html tech.php
+DirectoryIndex index.php index.html tech.php war.php browser.php
 
-ErrorDocument 403 https://leksii.art/404/
-ErrorDocument 404 https://leksii.art/404/
-ErrorDocument 500 https://leksii.art/404/
+ErrorDocument 403 https://leksii.art/404
+ErrorDocument 404 https://leksii.art/404
+ErrorDocument 500 https://leksii.art/404
 
 ## вывод ошибок php
 php_flag display_startup_errors on

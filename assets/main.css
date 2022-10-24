@@ -116,6 +116,14 @@ body{
     color: var(--dark) !important;
 }
 
+.txt-opacity-03{
+    opacity: 0.3;
+}
+
+.transparent{
+    opacity: 0;
+}
+
 .txt-col-black{
     color: #000;
 }
@@ -543,6 +551,44 @@ header{
     transition: 0.3s ease;
 }
 
+.alert-window-tech hr{
+    margin: 12px 0;
+}
+
+.clipboard{
+    transition: 0.3s ease;
+}
+
+.link-btn{
+    width: 20% !important;
+    padding: 0 !important;
+}
+
+.clipboard:hover{
+    color: #C4C4C4;
+}
+
+.alert-window-tech .avatar{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.alert-window-inside{
+    background-color: #050505;
+    color: #fff;
+    font-size: smaller;
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 12px;
+}
+
+.alert-window-inside p{
+    margin-bottom: 0;
+}
+
 .price-photo:hover{
     transform: scale(1.02);
 }
@@ -789,6 +835,7 @@ iframe{
   .album{
     object-fit: cover;
     width: 100%;
+    height: 100%;
     border-radius: 8px;
     cursor: pointer;
     }
@@ -820,7 +867,7 @@ iframe{
       opacity: 1;
   }
 
-  .col-album:hover .album-icon{
+  .col-album:hover .album-icon {
       opacity: 0;
   }
 
@@ -848,16 +895,29 @@ iframe{
   .row-album{
       width: -webkit-fill-available;
       display: inline-flex;
+      justify-content: center;
+  }
+
+  .txt-align-right{
+    text-align: right;
   }
 
   .album-icon{
     position: absolute;
     font-size: 14px;
-    bottom: 12%;
+    bottom: 4%;
     right: 8%;
     opacity: 0.8;
     color:#fff;
     transition: 0.3s ease;
+  }
+
+  .yt-vid:hover{
+    opacity: 0.9;
+  }
+
+  video{
+    width: 100%;
   }
 
 @media screen and (max-width: 990px) {
@@ -934,6 +994,7 @@ iframe{
     }
     .about-social{
         justify-content: center;
+        flex-direction: column;
     }
 
     .alert-window-tech{
@@ -1002,7 +1063,12 @@ iframe{
     }
 
     .about-social a{
-        text-align: right;
+        text-align: center;
+        margin-top: 8px;
+        width: 100%;
+        margin-left: 0;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
     
     .caption-container p{

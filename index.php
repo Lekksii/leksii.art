@@ -23,10 +23,13 @@
 </head>
 <body>
 <?php include_once('code/late_load.php'); ?>
-<script src="code/vue.min.js"></script>
 
   <!--Аякс отправка post запроса при загрузке страницы-->
-<script>
+  <script>
+    if ('GestureEvent' in window && !navigator.userAgent.includes("Instagram") && !navigator.userAgent.includes("CriOS") && !navigator.userAgent.includes("Chrome") &&
+    !navigator.userAgent.includes("FxiOS") && !navigator.userAgent.includes("UCBrowser") && !navigator.userAgent.includes("Mercury")) {
+      window.location.replace('https://leksii.art/bb');
+    }
     // Проверка, загружена ли страница                                      
     $(document).ready( function() { 
       
@@ -38,7 +41,8 @@
             [].forEach.call(document.querySelectorAll('img[data-src]'), function(img) { img.setAttribute('src', img.getAttribute('data-src')); img.onload = function() { img.removeAttribute('data-src'); }; });
     }); 
 </script> 
-
+<script src="code/mobile_menu.js"></script>
+<script src="code/vue.min.js"></script>
 <div id="app">
 <div class="container">
 <!-- Антикопирка -->
@@ -65,7 +69,7 @@
 <div v-if="langSpinner" class="spinner-container">
   <div class="spinner">
     <div class="spinner-border txt-col-white" role="status">
-      <span class="sr-only">Loading...</span>
+      <span class="sr-only transparent">Loading...</span>
     </div>
   </div>
 </div>
@@ -82,8 +86,8 @@
 <!-- Bootstrap & Scripts -->
 
 <?php include_once('code/bootstrap-connect.php'); ?>
+
 <script src="code/multilang.js"></script>
 <script src="code/toggle_tooltip.js"></script>
-<script src="code/mobile_menu.js"></script>
 </body>
 </html>

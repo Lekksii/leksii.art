@@ -7,7 +7,6 @@ define('ROOT', $_SERVER['DOCUMENT_ROOT']);
 
 
 
-require_once ROOT . '/code/database.php';
 require_once ROOT . '/vendor/check_auth.php';
 require_once ROOT . '/code/libs/gallery_editor.php';
 

@@ -12,6 +12,7 @@
             <div class="about-social">
                 <a class="fs12" href="https://instagram.com/alexey.kd" target="_blank">Instagram</a>
                 <a class="fs12" href="tg://resolve?domain=leksiikd">Telegram</a>
+                <a class="fs12" href="tel:380955969927">{{langKey('about_phone')}}</a>
             </div>
         </div>
     </div>

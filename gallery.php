@@ -31,12 +31,14 @@
 <?php 
 
 if (isset($_GET['album'])){
-    $db_album = db_read_data("SELECT * FROM albums ORDER BY id ASC");
-    $album_id = $_GET['album']-1;
-    $path = "assets/images/photos/".$db_album[$album_id]['folder'];
+    $json = file_get_contents(ROOT.'/json/data.json');
+    $json_data = json_decode($json, true);
+    $album_id = $_GET['album'];
+    $album = $json_data["albums_section"][$album_id];
+    $tmp = 0;
+    $path = "assets/images/photos/".$album['folder'];
     $files = [];
     $album_count = 0;
-    $tmp = 0;
 
     foreach (glob($path.'/*.webp') as $file) {
         $files[] = $file;
@@ -48,7 +50,7 @@ if (isset($_GET['album'])){
             <div class="vid-title-block f-ua">
                 <h4 class="fw700 fs20 txt-col-white mb-1"></h4>
             </div>
-            <h4 class="fw700 fs16 txt-col-white mb-2"><strong>{{langKey("gallery_title")}} "'.$db_album[$album_id]['title'].'"</strong></h4>';
+            <h4 class="fw700 fs16 txt-col-white mb-2 txt-align-right"><strong>{{langKey("gallery_title")}} "'.$album['title'].'"</strong></h4>';
     for ($i=0;$i<$album_count;$i++){
         if($tmp == 0){
             echo '<div class="row">';
@@ -57,7 +59,7 @@ if (isset($_GET['album'])){
         if ($tmp < 4){
             echo '
             <div class="col-4 col-album-big col-mb">
-                <img class = "album" loading="lazy" data-src="'.$files[$i].'" alt="'.$db_album[$album_id]['title'].'">
+                <img class = "album" loading="lazy" data-src="'.$files[$i].'" alt="'.$album['title'].'">
             </div>';
             $tmp += 1;
         }
@@ -78,7 +80,7 @@ if (isset($_GET['album'])){
 ?>
 
 <div class="btns-container mb-1">
-    <a class="f-ua fs12 style-white-btn txt-col-black" style="color: #000;" href="/#photos">{{langKey('gallery_back')}}</a> 
+    <!--a class="f-ua fs12 style-white-btn txt-col-black" style="color: #000;" href="https://leksii.art/">{{langKey('gallery_back')}}</a--> 
 </div>
 
 <?php require_once('templates/footer.php'); ?>

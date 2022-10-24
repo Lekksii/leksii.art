@@ -8,30 +8,115 @@
     "price_section":[
         {
             "title": "price_photo_title",
-            "price": 40,
+            "price": 50,
+            "course": 38,
             "currency": "$",
+            "show_mono": true,
             "per_hour": true,
             "caption": "price_photo_description",
             "warning": "price_photo_warning"
         },
         {
             "title": "price_video_title",
-            "price": 200,
+            "price": 300,
+            "course": 38,
             "currency": "$",
+            "show_mono": true,
             "per_hour": false,
+            "warn": false,
             "caption": "price_video_description",
             "warning": ""
         }
     ],
     "albums_section":[
         {
-            "title": "",
-            "folder": "",
-            "preview": "",
+            "title": "ANASTASIA",
+            "folder": "anastasia",
+            "preview": "1",
             "show_album": true
-        }
+        },
+        {
+            "title": "MARUSIA",
+            "folder": "marusia",
+            "preview": "7",
+            "show_album": true
+        },
+        {
+            "title": "LELYA",
+            "folder": "lelia",
+            "preview": "2",
+            "show_album": true
+        },
+        {
+            "title": "ANASTASIA",
+            "folder": "anastasia-2",
+            "preview": "1",
+            "show_album": true
+        },
+        {
+            "title": "LIDIA",
+            "folder": "lidia",
+            "preview": "1",
+            "show_album": true
+        },
+        {
+            "title": "MARBI",
+            "folder": "marbi",
+            "preview": "1",
+            "show_album": true
+        },
+        {
+            "title": "RIMMA",
+            "folder": "rimma",
+            "preview": "1",
+            "show_album": true
+        },
+        {
+            "title": "LERA",
+            "folder": "lera",
+            "preview": "1",
+            "show_album": true
+        },
+        {
+            "title": "PROKLYANA",
+            "folder": "proklyana",
+            "preview": "1",
+            "show_album": true
+        }   
     ],
     "video_section":[
+        {
+            "title": "Alice Change - Не його типаж",
+            "url": "IEPz86MU_gw",
+            "preview":"alicechange/typazh.jpg"
+        },
+        {
+            "title": "KAM - RONDO",
+            "preview":"rondo_preview.webp",
+            "local": true,
+            "folder": "kam_rondo",
+            "source": ["rondo.webm","rondo.mp4"]
+        },
+        {
+            "title": "СХОЖА feat. MBY - Синдром",
+            "url": "jA0bAGb1a-k"
+        },
+        {
+            "title": "СХОЖА - АЗОВУ",
+            "url": "IPxyDX57eLg"
+        },
+        {
+            "title": "МАРНИЙ - Синдром вцілілого",
+            "url": "8-0cWkqe07E"
+        },
+        {
+            "title": "ФІОЛЕТ - На Чорному морі",
+            "url": "VRJaUTgbvbI"
+        },
+        {
+            "title": "СХОЖА - Виноградне листя",
+            "url": "QuMRTaJySH8"
+        },
         {
             "title": "СХОЖА & МАРНИЙ - Сон",
             "url": "-Lt3ef7bQX4"
@@ -74,7 +159,7 @@
         },
         {
             "title": "LEKSII – 2021",
-            "url": "U3Cydm4Had8"
+            "url": "_GAqRDCerTI"
         }
     ]
 }
